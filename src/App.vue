@@ -1,6 +1,8 @@
 <template>
+  
   <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
     <main>
+      <div class="area">Weather</div>
       <div class="search-box">
         <input 
           type="text" 
@@ -74,6 +76,7 @@ export default {
 
 body {
   font-family: 'montserrat', sans-serif;
+  background-color: wheat;
 }
 
 #app {
@@ -82,8 +85,57 @@ body {
   background-size: cover;
   background-position: bottom;
   transition: 0.4s;
-  width:30%
+  width:30%;
+  margin-left: 35%
+  
 }
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+ font-family: "Open Sans",  Impact;
+}
+
+.area {
+  text-align: center;
+  font-size: 2em;
+  color: #fff;
+  letter-spacing: -7px;
+  font-weight: 700;
+  text-transform: uppercase;
+  animation: blur 2s ease-out infinite;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+}
+
+@keyframes blur {
+  from {
+    text-shadow:0px 0px 10px #fff,
+      0px 0px 10px #fff, 
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #7B96B8,
+      0px 0px 150px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px -10px 100px #7B96B8,
+      0px -10px 100px #7B96B8;
+  }
+}
+
+
+
+
+
+
+
+Resources
 
 #app.warm {
   background-image: url('./assets/pngtree-beautiful-natural-walking-game-background-picture-image_1048118.jpg');
@@ -93,7 +145,7 @@ body {
 main {
   min-height: 100vh;
   padding: 25px;
-
+  
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
   
 }
@@ -170,4 +222,5 @@ main {
   font-style: italic;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
 }
+
 </style>
